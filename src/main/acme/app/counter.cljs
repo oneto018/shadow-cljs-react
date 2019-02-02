@@ -14,7 +14,7 @@
 (hx/defnc counter []
   (let [[count set-count!] (use-state 0)]
     [:div
-     [:h1 (str "count: " count)]
+     [:h1 (str "count2: " count)]
      [:button {:on-click #(set-count! (inc count))} "plus + "]
      [:button {:on-click #(set-count! (dec count))} "minus - "]]))
 
