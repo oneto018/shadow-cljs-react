@@ -47,9 +47,9 @@
 
 (hx/defnc drag-example []
   (let [[bind {:keys [delta down]}] (gesture/useGesture)
-        {:keys [x]} (react-spring/useSpring #js{:x (if down (first delta) 0)})
-        style  {:transform (x.interpolate  #(str "translateX(" % "px)"))}
+        {:keys [x]} (react-spring/useSpring #js{:x (if down (first delta) 0) :immediate down})
+        style  {:transform (x.interpolate  #(str "translateX(" % "px)")) :padding 20}
         props (-> (get-bind bind) (assoc :style style))]
     [:div
-     [:h2 "try to pull from the sides"]
-     [animated.button props "pull me"]]))
+     [:h2 "Drag the button from the sides"]
+     [animated.button props "Drag me"]]))
