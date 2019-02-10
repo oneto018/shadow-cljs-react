@@ -2,7 +2,7 @@
   (:require ["react" :as react]
             ["react-with-gesture" :as gesture]
             ["react-spring/hooks" :as react-spring]
-            [goog.string :as gstring]
+            [goog.object :as gobj]
             [hx.react :as hx]))
 
 
@@ -31,9 +31,9 @@
   ILookup
   (-lookup
     ([o k]
-     (goog.object/get o (name k)))
+     (gobj/get o (name k)))
     ([o k not-found]
-     (goog.object/get o (name k) not-found))))
+     (gobj/get o (name k) not-found))))
 
 (comment (let [{:keys [a b]} #js{:a 10, :b 20}]
            (print a)
@@ -48,7 +48,7 @@
 (hx/defnc drag-example []
   (let [[bind {:keys [delta down]}] (gesture/useGesture)
         {:keys [x]} (react-spring/useSpring #js{:x (if down (first delta) 0)})
-        style  {:transform (x.interpolate  #(gstring/format "translateX(%spx)" %))}
+        style  {:transform (x.interpolate  #(str "translateX(" % "px)"))}
         props (-> (get-bind bind) (assoc :style style))]
     [:div
      [:h2 "try to pull from the sides"]
