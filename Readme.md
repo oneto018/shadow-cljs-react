@@ -2,6 +2,10 @@
 
 A proof of concept using shadow-cljs , using `React.js` directly using [https://github.com/Lokeh/hx](https://github.com/Lokeh/hx)
 
+# Demo
+
+[https://oneto018.github.io/shadow-cljs-react/](https://oneto018.github.io/shadow-cljs-react/)
+
 ## To start development
 
 ```sh
