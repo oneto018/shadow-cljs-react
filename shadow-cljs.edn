@@ -5,7 +5,8 @@
   "src/test"]
 
  :dependencies
- [[lilactown/hx "0.2.5"]]
+ [[lilactown/hx "0.2.5"]
+  [reagent "0.8.1"]]
 
 
  :builds {:app {:target :browser

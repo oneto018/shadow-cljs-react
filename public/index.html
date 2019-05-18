@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Shadow cljs</title>
-    <link rel="stylesheet" href="assets/style.css" />
+
+    <style>
+      #reagent-app {
+        border: 3px solid blue;
+        padding: 10px;
+      }
+
+      #app {
+        border: 3px solid green;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
+    <h1>Reagent app</h1>
+    <div id="reagent-app"></div>
+    <h1>Hx App</h1>
     <div id="app"></div>
     <script src="assets/app/js/main.js"></script>
   </body>

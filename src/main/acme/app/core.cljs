@@ -2,7 +2,8 @@
   (:require ["react" :as react]
             ["react-dom" :as react-dom]
             [hx.react :as hx]
-            [acme.app.counter :as counter]))
+            [acme.app.counter :as counter]
+            [acme.app.reagent-component :as reagent-component]))
 
 (def log js/console.log)
 
@@ -30,4 +31,6 @@
   (.reload (.-location js/window)))
 
 (defn ^:dev/after-load init []
-  (react-dom/render (hx/f [my-component]) (get-element "#app")))
+  (println "files changed!")
+  (react-dom/render (hx/f [my-component]) (get-element "#app"))
+  (reagent-component/render-simple))
