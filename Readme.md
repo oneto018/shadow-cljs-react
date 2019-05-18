@@ -5,6 +5,7 @@ A proof of concept using shadow-cljs , using `React.js` directly using [https://
 ## To start development
 
 ```sh
+git checkout gh-pages
 npm install
 npx shadow-cljs watch app
 ```
